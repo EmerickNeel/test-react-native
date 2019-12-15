@@ -21,8 +21,11 @@ class Calc extends Component {
     super(props);
   }
 
+  bEval = false;
+
   state = {
-    label: ''
+    label: '',
+    bEval: false
   }
 
   render() {
@@ -33,67 +36,114 @@ class Calc extends Component {
           <View style={{ flex: 1 }}>
             <View style={styles.btnOpe}>
               <TouchableOpacity onPress={() => {
-                this.setState({
-                  label : this.state.label + "1"
-                })
+                if (this.state.bEval = true) {
+                  this.setState({
+                    label: this.state.label + ""
+                  }
+                  )
+                }
               }}>
                 <Text style={styles.btnText}>Press</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "("
+                })
+              }}>
                 <Text style={styles.btnText}>(</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "7"
+                })
+              }}>
                 <Text style={styles.btnText}>7</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "4"
+                })
+              }}>
                 <Text style={styles.btnText}>4</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "1"
+                })
+              }}>
                 <Text style={styles.btnText}>1</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "0"
+                })
+              }}>
                 <Text style={styles.btnText}>0</Text>
               </TouchableOpacity>
             </View>
           </View>
           <View style={{ flex: 1 }}>
             <View style={styles.btnOpe}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: ""
+                })
+              }}>
                 <Text style={styles.btnText}>Clean</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + ")"
+                })
+              }}>
                 <Text style={styles.btnText}>)</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "8"
+                })
+              }}>
                 <Text style={styles.btnText}>8</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "5"
+                })
+              }}>
                 <Text style={styles.btnText}>5</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "2"
+                })
+              }}>
                 <Text style={styles.btnText}>2</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "00"
+                })
+              }}>
                 <Text style={styles.btnText}>00</Text>
               </TouchableOpacity>
             </View>
@@ -101,32 +151,56 @@ class Calc extends Component {
           </View>
           <View style={{ flex: 1 }}>
             <View style={styles.btnOpe}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label.substring(0, this.state.label.length - 1)
+                })
+              }}>
                 <Text style={styles.btnText}>Del</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "%"
+                })
+              }}>
                 <Text style={styles.btnText}>%</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "9"
+                })
+              }}>
                 <Text style={styles.btnText}>9</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "6"
+                })
+              }}>
                 <Text style={styles.btnText}>6</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "3"
+                })
+              }}>
                 <Text style={styles.btnText}>3</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnChiffre}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "."
+                })
+              }}>
                 <Text style={styles.btnText}>.</Text>
               </TouchableOpacity>
             </View>
@@ -135,27 +209,47 @@ class Calc extends Component {
 
           <View style={{ flex: 1 }}>
             <View style={styles.btnOpe}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "/"
+                })
+              }}>
                 <Text style={styles.btnText}>/</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnOpe}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "*"
+                })
+              }}>
                 <Text style={styles.btnText}>X</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnOpe}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "-"
+                })
+              }}>
                 <Text style={styles.btnText}>-</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnOpe}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: this.state.label + "+"
+                })
+              }}>
                 <Text style={styles.btnText}>+</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.btnEgale}>
-              <TouchableOpacity onPress={this._onPressButton}>
+              <TouchableOpacity onPress={() => {
+                this.setState({
+                  label: eval(this.state.label)
+                })
+              }}>
                 <Text style={styles.btnText}>=</Text>
               </TouchableOpacity>
             </View>
